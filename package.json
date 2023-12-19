@@ -1,5 +1,7 @@
 {
-  "scripts": {},
+  "scripts": {
+    "test": "jest --verbose "
+  },
   "dependencies": {
     "jest": "^29.7.0"
   }

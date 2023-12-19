@@ -1,7 +1,7 @@
 /*
- *Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
- *You may assume that each input would have exactly one solution, and you may not use the same element twice.
- *You can return the answer in any order.
+ * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+ * You may assume that each input would have exactly one solution, and you may not use the same element twice.
+ * You can return the answer in any order.
  */
 
 /**
@@ -24,4 +24,24 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function (nums, target) {};
+var twoSum = function (nums, target) {
+  // create a map to store loop item
+  let storage = new Map();
+
+  // loop through the array
+  for (let i = 0; i < nums.length; i++) {
+    // get the subtract value
+    let subtract = target - nums[i];
+
+    // if the subtract value is in the map, return the index of the subtract value and the current index
+    if (storage.get(subtract) >= 0) {
+      return [storage.get(subtract), i];
+    }
+
+    // if the subtract value is not in the map, add the current value and index to the map
+    storage.set(nums[i], i);
+  }
+};
+exports.twoSum = twoSum;
+
+// timecomplexity: O(n)
