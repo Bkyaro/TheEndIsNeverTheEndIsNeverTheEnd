@@ -30,7 +30,18 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-  
+  const looper = (temp1, temp2, rest = 0) => {
+    if (!temp1 && !temp2 && !rest) return null;
+    let sum = (temp1?.val || 0) + (temp2?.val || 0) + rest;
+    // temp1 即 l1.val  + temp2 即 l2.val + rest 即 上一次相加的结果的进位
+    // 比如 temp1 + temp2 = 15，下一次相加时需要加1; temp1 + temp2 = 23, 下一次相加时需要加2
+    let newNode = looper(temp1?.next, temp2?.next, Math.floor(sum / 10));
+
+    // sum % 10 即，相加后，如果大于 10，那么原本的位置放的是余数。
+    // 比如 相加后 = 15，那么本位为 5
+    return new ListNode(sum % 10, newNode);
+  };
+  return looper(l1, l2);
 };
 
 exports.addTwoNumbers = addTwoNumbers;

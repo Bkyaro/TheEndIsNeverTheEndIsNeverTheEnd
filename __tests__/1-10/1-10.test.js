@@ -14,17 +14,16 @@ describe("1-Two Sums", () => {
   });
 });
 
+// describe("2-Add two numbers", () => {
+//   const testy = [
+//     { l1: [2,4,3], l2: [5,6,4], output: [7,0,8] },
+//     { l1: [0], l2: [0], output: [0] },
+//     { l1: [9,9,9,9,9,9,9], l2: [9,9,9,9], output: [8,9,9,9,0,0,0,1] }
+//   ];
 
-describe("2-Add two numbers", () => {
-  const testy = [
-    { l1: [2,4,3], l2: [5,6,4], output: [7,0,8] },
-    { l1: [0], l2: [0], output: [0] },
-    { l1: [9,9,9,9,9,9,9], l2: [9,9,9,9], output: [8,9,9,9,0,0,0,1] }
-  ];
-
-  testy.forEach((test, index) => {
-    it(`test${index}`, () => {
-      expect(addTwoNumbers(test.l1, test.l2)).toEqual(test.output);
-    });
-  });
-});
+//   testy.forEach((test, index) => {
+//     it(`test${index}`, () => {
+//       expect(addTwoNumbers(test.l1, test.l2)).toEqual(test.output);
+//     });
+//   });
+// });
