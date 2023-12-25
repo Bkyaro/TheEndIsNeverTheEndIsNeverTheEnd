@@ -18,6 +18,51 @@
  * @param {number[]} nums2
  * @return {number}
  */
-var findMedianSortedArrays = function (nums1, nums2) {};
+var findMedianSortedArrays = function (nums1, nums2) {
+  let result;
+
+  if (nums1.length == 0) {
+    result = findMediant(nums2);
+  }
+  if (nums2.length == 0) {
+    result = findMediant(nums1);
+  }
+  let conbination = [...nums1, ...nums2];
+  //对conbination进行排序
+  let sorted = conbination.sort((a, b) => a - b);
+  result = findMediant(sorted);
+
+  function findMediant(arr) {
+    if (arr.length % 2 == 1) {
+      return arr[Math.floor(arr.length / 2)];
+    } else {
+      return (arr[arr.length / 2] + arr[arr.length / 2 - 1]) / 2;
+    }
+  }
+
+  return result;
+};
+
+/**
+ * method2
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */
+var findMedianSortedArrays2 = function (nums1, nums2) {
+  return !nums1.length
+    ? findMediant(nums2)
+    : !nums2.length
+    ? findMediant(nums1)
+    : findMediant([...nums1, ...nums2].sort((a, b) => a - b));
+
+  function findMediant(arr) {
+    if (arr.length % 2 == 1) {
+      return arr[Math.floor(arr.length / 2)];
+    } else {
+      return (arr[arr.length / 2] + arr[arr.length / 2 - 1]) / 2;
+    }
+  }
+};
 
 module.exports = findMedianSortedArrays;
