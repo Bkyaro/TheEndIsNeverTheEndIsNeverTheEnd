@@ -1,5 +1,6 @@
-const { twoSum } = require("../../leetcode/1-10/1-TwoSum.js");
-const { addTwoNumbers } = require("../../leetcode/1-10/2-AddTwoNumbers.js");
+const twoSum = require("../../leetcode/1-10/1-TwoSum.js");
+const addTwoNumbers = require("../../leetcode/1-10/2-AddTwoNumbers.js");
+const lengthOfLongestSubstring = require("../../leetcode/1-10/3-LongestSubstringWithoutRepeatingCharacters.js");
 describe("1-Two Sums", () => {
   const testy = [
     { nums: [2, 7, 11, 15], target: 9, output: [0, 1] },
@@ -27,3 +28,20 @@ describe("1-Two Sums", () => {
 //     });
 //   });
 // });
+
+describe("3-Longest Substring Without Repeating Characters", () => {
+  const testy = [
+    { s: "abcabcbb", output: 3 },
+    { s: "bbbbb", output: 1 },
+    { s: "pwwkew", output: 3 },
+    { s: "au", output: 2 },
+    { s: "dvdh", output: 3 },
+    { s: " ", output: 1 },
+  ];
+
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(lengthOfLongestSubstring(test.s)).toEqual(test.output);
+    });
+  });
+});

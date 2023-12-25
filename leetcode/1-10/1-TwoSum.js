@@ -42,6 +42,6 @@ var twoSum = function (nums, target) {
     storage.set(nums[i], i);
   }
 };
-exports.twoSum = twoSum;
+module.exports = twoSum;
 
 // timecomplexity: O(n)

@@ -44,4 +44,4 @@ var addTwoNumbers = function (l1, l2) {
   return looper(l1, l2);
 };
 
-exports.addTwoNumbers = addTwoNumbers;
+module.exports = addTwoNumbers;
