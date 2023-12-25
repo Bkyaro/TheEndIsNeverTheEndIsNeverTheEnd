@@ -1,6 +1,7 @@
 const twoSum = require("../../leetcode/1-10/1-TwoSum.js");
 const addTwoNumbers = require("../../leetcode/1-10/2-AddTwoNumbers.js");
 const lengthOfLongestSubstring = require("../../leetcode/1-10/3-LongestSubstringWithoutRepeatingCharacters.js");
+const findMedianSortedArrays = require("../../leetcode/1-10/4-MedianOfTwoSortedArrays.js");
 describe("1-Two Sums", () => {
   const testy = [
     { nums: [2, 7, 11, 15], target: 9, output: [0, 1] },
@@ -42,6 +43,21 @@ describe("3-Longest Substring Without Repeating Characters", () => {
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(lengthOfLongestSubstring(test.s)).toEqual(test.output);
+    });
+  });
+});
+
+describe("4-Median of Two Sorted Arrays", () => {
+  const testy = [
+    { s: [1, 3], t: [2], output: 2.0 },
+    { s: [1, 2], t: [3, 4], output: 2.5 },
+    { s: [1, 2], t: [3, 4, 5], output: 3 },
+    { s: [1, 2, 3], t: [4, 5], output: 3 },
+  ];
+
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(findMedianSortedArrays(test.s, test.t)).toEqual(test.output);
     });
   });
 });
