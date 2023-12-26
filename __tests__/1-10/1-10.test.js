@@ -2,6 +2,7 @@ const twoSum = require("../../leetcode/1-10/1-TwoSum.js");
 const addTwoNumbers = require("../../leetcode/1-10/2-AddTwoNumbers.js");
 const lengthOfLongestSubstring = require("../../leetcode/1-10/3-LongestSubstringWithoutRepeatingCharacters.js");
 const findMedianSortedArrays = require("../../leetcode/1-10/4-MedianOfTwoSortedArrays.js");
+const longestPalindrome = require("../../leetcode/1-10/5-LongestPalindromicSubstring.js");
 describe("1-Two Sums", () => {
   const testy = [
     { nums: [2, 7, 11, 15], target: 9, output: [0, 1] },
@@ -58,6 +59,21 @@ describe("4-Median of Two Sorted Arrays", () => {
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(findMedianSortedArrays(test.s, test.t)).toEqual(test.output);
+    });
+  });
+});
+
+describe("5-Longest Palindromic Substring", () => {
+  const testy = [
+    { s: "babad", output: "bab" },
+    { s: "cbbd", output: "bb" },
+    { s: "abcbaaaaaaaa", output: "aaaaaaaa" },
+    { s: "a", output: "a" },
+  ];
+
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(longestPalindrome(test.s)).toEqual(test.output);
     });
   });
 });
