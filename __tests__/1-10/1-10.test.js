@@ -3,6 +3,7 @@ const addTwoNumbers = require("../../leetcode/1-10/2-AddTwoNumbers.js");
 const lengthOfLongestSubstring = require("../../leetcode/1-10/3-LongestSubstringWithoutRepeatingCharacters.js");
 const findMedianSortedArrays = require("../../leetcode/1-10/4-MedianOfTwoSortedArrays.js");
 const longestPalindrome = require("../../leetcode/1-10/5-LongestPalindromicSubstring.js");
+const convert = require("../../leetcode/1-10/6-ZigzagConvertion.js");
 describe("1-Two Sums", () => {
   const testy = [
     { nums: [2, 7, 11, 15], target: 9, output: [0, 1] },
@@ -74,6 +75,23 @@ describe("5-Longest Palindromic Substring", () => {
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(longestPalindrome(test.s)).toEqual(test.output);
+    });
+  });
+});
+
+describe("6-ZigZag Conversion", () => {
+  const testy = [
+    // { s: "A", numRows: 1, output: "A" },
+    // { s: "AB", numRows: 2, output: "AB" },
+    { s: "ABCDE", numRows: 3, output: "AEBDC" },
+    // { s: "ABCDE", numRows: 2, output: "ACEBD" },
+    // { s: "PAYPALISHIRING", numRows: 3, output: "PAHNAPLSIIGYIR" },
+    // { s: "PAYPALISHIRING", numRows: 4, output: "PINALSIGYAHRPI" },
+  ];
+
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(convert(test.s, test.numRows)).toEqual(test.output);
     });
   });
 });
