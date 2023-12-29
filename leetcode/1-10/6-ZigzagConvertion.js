@@ -85,17 +85,86 @@ var convert = function (s, numRows) {
  * @param {number} numRows
  * @return {string}
  */
-var convert = function(s, numRows) {
-  if(numRows === 1 || s.length <= numRows) return s;
-  const grid = Array(numRows).fill('');
-  let i = 0, down = true;
-  
-  for(let c of s) {
-      grid[i] += c;
-      down ? i++ : i--;
-      if(i === numRows-1 || !i) down = !down;
+var convert = function (s, numRows) {
+  if (numRows === 1 || s.length <= numRows) return s;
+  const grid = Array(numRows).fill("");
+  let i = 0,
+    down = true;
+
+  for (let c of s) {
+    grid[i] += c;
+    down ? i++ : i--;
+    if (i === numRows - 1 || !i) down = !down;
   }
-  return grid.join('')
+  return grid.join("");
+};
+
+/**
+ * lightest on gh
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
+var convert = function (s, numRows) {
+  let result = new Array(s.length);
+  let count = 1;
+  let flag = 0;
+  let key = 1;
+  let check = 0;
+  while (flag != s.length) {
+    for (let i = 0; i < s.length; i++) {
+      if (key == count) {
+        result[flag] = s[i];
+        flag += 1;
+      }
+      if (count == numRows || check == 1) {
+        check = 1;
+        count -= 1;
+        if (count == 1) {
+          check = 0;
+        }
+        if (count == 0) {
+          count = 1;
+        }
+      } else if (check == 0) {
+        count += 1;
+      }
+    }
+    count = 1;
+    key += 1;
+    check = 0;
+  }
+
+  return result.join("");
+};
+
+/**
+ * fastest on gh
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
+var convert = function (s, numRows) {
+  if (numRows == 1) return s;
+
+  let n = s.length;
+  let charsInSection = numRows * 2 - 2;
+  let res = "";
+
+  for (let row = 0; row < numRows; row++) {
+    let i = row;
+    while (i < n) {
+      res += s[i];
+
+      if (row != 0 && row != numRows - 1) {
+        let charsInBetween = charsInSection - 2 * row;
+        let secondIndex = i + charsInBetween;
+        if (secondIndex < n) res += s[secondIndex];
+      }
+      i += charsInSection;
+    }
+  }
+  return res;
 };
 
 module.exports = convert;
