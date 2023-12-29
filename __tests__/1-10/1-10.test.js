@@ -4,6 +4,7 @@ const lengthOfLongestSubstring = require("../../leetcode/1-10/3-LongestSubstring
 const findMedianSortedArrays = require("../../leetcode/1-10/4-MedianOfTwoSortedArrays.js");
 const longestPalindrome = require("../../leetcode/1-10/5-LongestPalindromicSubstring.js");
 const convert = require("../../leetcode/1-10/6-ZigzagConvertion.js");
+const reverse = require("../../leetcode/1-10/7-ReverseInterger.js");
 describe("1-Two Sums", () => {
   const testy = [
     { nums: [2, 7, 11, 15], target: 9, output: [0, 1] },
@@ -92,6 +93,21 @@ describe("6-ZigZag Conversion", () => {
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(convert(test.s, test.numRows)).toEqual(test.output);
+    });
+  });
+});
+
+describe("7-Reverse Interger", () => {
+  const testy = [
+    { x: 123, output: 321 },
+    { x: -123, output: -321 },
+    { x: 120, output: 21 },
+    { x: 0, output: 0 },
+    { x: 1534236469, output: 0 },
+  ];
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(reverse(test.x)).toEqual(test.output);
     });
   });
 });
