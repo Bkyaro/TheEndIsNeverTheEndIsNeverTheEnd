@@ -6,6 +6,7 @@ const longestPalindrome = require("../../leetcode/1-10/5-LongestPalindromicSubst
 const convert = require("../../leetcode/1-10/6-ZigzagConvertion(M).js");
 const reverse = require("../../leetcode/1-10/7-ReverseInterger(M).js");
 const myAtoi = require("../../leetcode/1-10/8-StringToInterger(M).js");
+const isPalindrome = require("../../leetcode/1-10/9-PalindromeNumber(E).js");
 describe("1-Two Sums", () => {
   const testy = [
     { nums: [2, 7, 11, 15], target: 9, output: [0, 1] },
@@ -125,6 +126,22 @@ describe("8-String to Interger", () => {
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(myAtoi(test.s)).toEqual(test.output);
+    });
+  });
+});
+
+describe("9-Palindrome Number", () => {
+  const testy = [
+    { x: -10, output: false },
+    { x: 121, output: true },
+    { x: -121, output: false },
+    { x: 10, output: false },
+    { x: -101, output: false },
+    { x: 0, output: true },
+  ];
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(isPalindrome(test.x)).toEqual(test.output);
     });
   });
 });
