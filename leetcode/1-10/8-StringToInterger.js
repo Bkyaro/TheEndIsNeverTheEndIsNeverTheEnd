@@ -60,7 +60,6 @@
  * @return {number}
  */
 var myAtoi = function (s) {
-    debugger;
   if (s.length == 0) {
     return 0;
   }
@@ -92,7 +91,7 @@ var myAtoi = function (s) {
     } else {
       if (marker) {
         let rest = trims.slice(i, trims.length);
-        if (!rest.replace(/\s/g, "")) {
+        if (rest) {
           reset = true;
         }
         break;
@@ -119,6 +118,46 @@ var myAtoi = function (s) {
     return 0;
   }
   return rst;
+};
+
+/**
+ * fastest on gh
+ * @param {string} s
+ * @return {number}
+ */
+var myAtoi = function (s) {
+  s = s.trim();
+  let num = "";
+  if (s.charAt(0) === "-" || s.charAt(0) === "+") {
+    num = s.charAt(0);
+    s = s.substring(1);
+  }
+  num += s.split(new RegExp(/[^0-9]/gi))[0];
+  num = Number(num);
+  if (!num) {
+    return 0;
+  }
+  if (Math.pow(-2, 31) <= num && num <= Math.pow(2, 31) - 1) {
+    return num;
+  }
+  return Math.pow(-2, 31) < num ? Math.pow(2, 31) - 1 : Math.pow(-2, 31);
+};
+
+/**
+ * lightest on gh
+ * @param {string} s
+ * @return {number}
+ */
+var myAtoi = function (s) {
+  let res = parseInt(s);
+  if (isNaN(res)) return 0;
+  if (res > Math.pow(2, 31) - 1) {
+    return Math.pow(2, 31) - 1;
+  } else if (res < -1 * Math.pow(2, 31)) {
+    return -1 * Math.pow(2, 31);
+  } else {
+    return res;
+  }
 };
 
 module.exports = myAtoi;
