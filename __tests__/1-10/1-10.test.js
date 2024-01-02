@@ -5,6 +5,7 @@ const findMedianSortedArrays = require("../../leetcode/1-10/4-MedianOfTwoSortedA
 const longestPalindrome = require("../../leetcode/1-10/5-LongestPalindromicSubstring.js");
 const convert = require("../../leetcode/1-10/6-ZigzagConvertion.js");
 const reverse = require("../../leetcode/1-10/7-ReverseInterger.js");
+const myAtoi = require("../../leetcode/1-10/8-StringToInterger.js");
 describe("1-Two Sums", () => {
   const testy = [
     { nums: [2, 7, 11, 15], target: 9, output: [0, 1] },
@@ -108,6 +109,22 @@ describe("7-Reverse Interger", () => {
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(reverse(test.x)).toEqual(test.output);
+    });
+  });
+});
+
+describe("8-String to Interger", () => {
+  const testy = [
+    { s: "i love       42888 and", output: 0 },
+    { s: "-+12", output: 0 },
+    { s: "42", output: 42 },
+    { s: "   -42", output: -42 },
+    { s: "4193 with words", output: 4193 },
+    { s: "words and 987", output: 0 },
+  ];
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(myAtoi(test.s)).toEqual(test.output);
     });
   });
 });

@@ -39,50 +39,50 @@ var reverse = function (x) {
  * fastest on gh
  * @param {number} x
  * @return {number}
- */
-var reverse = function (x) {
-  let y = x.toString().split("");
-  let neg = false;
-  if (y[0] == "-") {
-    neg = true;
-    y.shift();
-  }
-  let z = y.reverse();
-  let q = Number(z.join(""));
-  if (q > 0x7fffffff) {
-    // Directly check against 2^31 - 1
-    return 0;
-  }
-  return Number(neg ? -q : q);
-};
+//  */
+// var reverse = function (x) {
+//   let y = x.toString().split("");
+//   let neg = false;
+//   if (y[0] == "-") {
+//     neg = true;
+//     y.shift();
+//   }
+//   let z = y.reverse();
+//   let q = Number(z.join(""));
+//   if (q > 0x7fffffff) {
+//     // Directly check against 2^31 - 1
+//     return 0;
+//   }
+//   return Number(neg ? -q : q);
+// };
 
 /**
  * lighest on gh
  * @param {number} x
  * @return {number}
  */
-const LOW_LIMIT = Math.pow(-2, 31);
-const HIGH_LIMIT = Math.pow(2, 31) - 1;
-function reverse(x) {
-  let negative = false,
-    reversed = 0;
+// const LOW_LIMIT = Math.pow(-2, 31);
+// const HIGH_LIMIT = Math.pow(2, 31) - 1;
+// function reverse(x) {
+//   let negative = false,
+//     reversed = 0;
 
-  if (x < 0) {
-    negative = true;
-    x *= -1;
-  }
+//   if (x < 0) {
+//     negative = true;
+//     x *= -1;
+//   }
 
-  while (x > 0) {
-    let tail = x % 10;
+//   while (x > 0) {
+//     let tail = x % 10;
 
-    reversed = reversed * 10 + tail;
-    x = (x - tail) / 10;
+//     reversed = reversed * 10 + tail;
+//     x = (x - tail) / 10;
 
-    if (negative && reversed * -1 < LOW_LIMIT) return 0;
-    if (reversed > HIGH_LIMIT) return 0;
-  }
+//     if (negative && reversed * -1 < LOW_LIMIT) return 0;
+//     if (reversed > HIGH_LIMIT) return 0;
+//   }
 
-  return negative ? reversed * -1 : reversed;
-}
+//   return negative ? reversed * -1 : reversed;
+// }
 
 module.exports = reverse;
