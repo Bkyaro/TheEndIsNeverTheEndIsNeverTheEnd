@@ -8,6 +8,7 @@ const reverse = require("../../leetcode/1-10/7-ReverseInterger(M).js");
 const myAtoi = require("../../leetcode/1-10/8-StringToInterger(M).js");
 const isPalindrome = require("../../leetcode/1-10/9-PalindromeNumber(E).js");
 const isMatch = require("../../leetcode/1-10/10-RegularExpressionMatching(H).js");
+const maxArea = require("../../leetcode/1-10/11-ContainerWithMostWater(M).js");
 describe("1-Two Sums", () => {
   const testy = [
     { nums: [2, 7, 11, 15], target: 9, output: [0, 1] },
@@ -157,6 +158,21 @@ describe("10-Regular Expression Matching", () => {
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(isMatch(test.s, test.p)).toEqual(test.output);
+    });
+  });
+});
+
+describe("11-Container with most water", () => {
+  const testy = [
+    { height: [1, 8, 6, 2, 5, 4, 8, 3, 7], output: 49 },
+    { height: [1, 1], output: 1 },
+    { height: [4, 3, 2, 1, 4], output: 16 },
+    { height: [1, 2, 1], output: 2 },
+    { height: [1, 2, 1, 2, 1, 2, 1, 2, 1], output: 6 },
+  ];
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(maxArea(test.height)).toEqual(test.output);
     });
   });
 });
