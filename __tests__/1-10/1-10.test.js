@@ -168,7 +168,7 @@ describe("11-Container with most water", () => {
     { height: [1, 1], output: 1 },
     { height: [4, 3, 2, 1, 4], output: 16 },
     { height: [1, 2, 1], output: 2 },
-    { height: [1, 2, 1, 2, 1, 2, 1, 2, 1], output: 6 },
+    { height: [1, 2, 1, 2, 1, 2, 1, 2, 1], output: 12 },
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {

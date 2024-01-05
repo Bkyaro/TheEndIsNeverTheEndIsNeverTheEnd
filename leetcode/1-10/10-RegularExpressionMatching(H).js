@@ -25,7 +25,8 @@
  * @param {string} s
  * @param {string} p
  * @return {boolean}
- */ const isMatch = (string, pattern) => {
+ */
+var isMatch = (string, pattern) => {
   debugger;
   // early return when pattern is empty
   if (!pattern) {
@@ -70,7 +71,7 @@
 // 遍历填充dp数组：按行遍历 s 和按列遍历 p 来填充 dp 数组。
 
 // 返回结果：最终，dp[s.length][p.length] 的值将表示整个字符串 s 是否与模式 p 匹配。
-function isMatch(s, p) {
+var isMatch = (s, p) => {
   const dp = Array.from({ length: s.length + 1 }, () =>
     Array(p.length + 1).fill(false)
   );
@@ -95,7 +96,7 @@ function isMatch(s, p) {
   }
 
   return dp[s.length][p.length];
-}
+};
 
 /**
  * lightest on gh
@@ -103,7 +104,7 @@ function isMatch(s, p) {
  * @param {string} p
  * @return {boolean}
  */
-var isMatch = function (s, p) {
+var isMatch = (s, p) => {
   function dfs(i, j) {
     if (i >= s.length && j >= p.length) {
       return true;
