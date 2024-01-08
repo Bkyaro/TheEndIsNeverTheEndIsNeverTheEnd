@@ -185,7 +185,7 @@ describe("12-Integer to roman", () => {
     { num: 9, output: "IX" },
     { num: 58, output: "LVIII" },
     { num: 1994, output: "MCMXCIV" },
-    { num: 3999, output: "MMMCMXCI" },
+    { num: 3999, output: "MMMCMXCIX" },
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {

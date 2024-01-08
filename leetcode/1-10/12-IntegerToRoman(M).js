@@ -37,6 +37,119 @@
  * @param {number} num
  * @return {string}
  */
-var intToRoman = function (num) {};
+var intToRoman = function (num) {
+  let roman = {
+      M: 1000,
+      CM: 900,
+      D: 500,
+      CD: 400,
+      C: 100,
+      XC: 90,
+      L: 50,
+      XL: 40,
+      X: 10,
+      IX: 9,
+      V: 5,
+      IV: 4,
+      I: 1,
+    },
+    romanNum = "";
 
+  for (let i in roman) {
+    while (num >= roman[i]) {
+      romanNum += i;
+      num -= roman[i];
+    }
+  }
+  return romanNum;
+};
+
+/**
+ * lightest on gh
+ * @param {number} num
+ * @return {string}
+ */
+var intToRoman = function (num) {
+  const nums = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  const letters = [
+    "M",
+    "CM",
+    "D",
+    "CD",
+    "C",
+    "XC",
+    "L",
+    "XL",
+    "X",
+    "IX",
+    "V",
+    "IV",
+    "I",
+  ];
+  let res = "";
+
+  for (let i = 0; i < nums.length; i++) {
+    if (num >= nums[i]) {
+      res += letters[i];
+      num -= nums[i];
+      i--;
+    }
+  }
+
+  return res;
+};
+
+/**
+ * lightest on gh
+ * @param {number} num
+ * @return {string}
+ */
+var intToRoman = function (num) {
+  let res = "";
+
+  while (num > 0) {
+    if (num >= 1000) {
+      num -= 1000;
+      res += "M";
+    } else if (num >= 900 && num < 1000) {
+      num -= 900;
+      res += "CM";
+    } else if (num >= 500) {
+      num -= 500;
+      res += "D";
+    } else if (num >= 400 && num < 500) {
+      num -= 400;
+      res += "CD";
+    } else if (num >= 100) {
+      num -= 100;
+      res += "C";
+    } else if (num >= 90 && num < 100) {
+      num -= 90;
+      res += "XC";
+    } else if (num >= 50) {
+      num -= 50;
+      res += "L";
+    } else if (num >= 40 && num < 50) {
+      num -= 40;
+      res += "XL";
+    } else if (num >= 10) {
+      num -= 10;
+      res += "X";
+    } else if (num >= 9 && num < 10) {
+      num -= 9;
+      res += "IX";
+    } else if (num >= 5) {
+      num -= 5;
+      res += "V";
+    } else if (num >= 4 && num < 5) {
+      num -= 4;
+      res += "IV";
+    } else if (num >= 1) {
+      num -= 1;
+      res += "I";
+    }
+  }
+
+  return res;
+};
 module.exports = intToRoman;
