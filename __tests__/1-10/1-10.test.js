@@ -10,6 +10,7 @@ const isPalindrome = require("../../leetcode/1-10/9-PalindromeNumber(E).js");
 const isMatch = require("../../leetcode/1-10/10-RegularExpressionMatching(H).js");
 const maxArea = require("../../leetcode/1-10/11-ContainerWithMostWater(M).js");
 const intToRoman = require("../../leetcode/1-10/12-IntegerToRoman(M).js");
+const romanToInt = require("../../leetcode/1-10/13-RomanToInteger(E).js");
 describe("1-Two Sums", () => {
   const testy = [
     { nums: [2, 7, 11, 15], target: 9, output: [0, 1] },
@@ -190,6 +191,22 @@ describe("12-Integer to roman", () => {
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(intToRoman(test.num)).toEqual(test.output);
+    });
+  });
+});
+
+describe("12-Roman to integer", () => {
+  const testy = [
+    { s: "III", output: 3 },
+    { s: "IV", output: 4 },
+    { s: "IX", output: 9 },
+    { s: "LVIII", output: 58 },
+    { s: "MCMXCIV", output: 1994 },
+    { s: "MMMCMXCIX", output: 3999 },
+  ];
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(romanToInt(test.s)).toEqual(test.output);
     });
   });
 });
