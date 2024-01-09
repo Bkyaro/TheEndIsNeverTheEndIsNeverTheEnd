@@ -98,7 +98,7 @@ var romanToInt = function (s) {
  * @param {string} s
  * @return {number}
  */
-const romanToInt = function (s) {
+var romanToInt = function (s) {
   let res = 0;
   for (let i = s.length - 1; i >= 0; i--) {
     let c = s.charAt(i);
