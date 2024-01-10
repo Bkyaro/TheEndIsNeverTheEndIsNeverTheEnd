@@ -52,7 +52,10 @@ describe("12-Roman to integer", () => {
 describe("13-Longest common prefix", () => {
   const testy = [
     { strs: ["flower", "flow", "flight"], output: "fl" },
+    { strs: ["flower", "flower", "flower", "flower"], output: "flower" },
     { strs: ["dog", "racecar", "car"], output: "" },
+    { strs: ["gggii", "ggod", "ggbond"], output: "gg" },
+    { strs: ["gg", "gg", "gg"], output: "gg" },
     { strs: ["a"], output: "a" },
     { strs: ["a", "a"], output: "a" },
     { strs: ["a", "aa"], output: "a" },
