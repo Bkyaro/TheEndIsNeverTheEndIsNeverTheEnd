@@ -40,7 +40,7 @@ var maxArea = function (height) {
 };
 
 /**
- * lightest on gh
+ * lightest on leetcode
  * @param {number[]} height
  * @return {number}
  */
@@ -64,7 +64,7 @@ var maxArea = function (height) {
 };
 
 /**
- * fastest on gh
+ * fastest on leetcode
  * @param {number[]} height
  * @return {number}
  */

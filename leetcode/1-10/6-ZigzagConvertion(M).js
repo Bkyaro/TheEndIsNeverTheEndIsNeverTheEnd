@@ -100,7 +100,7 @@ var convert = function (s, numRows) {
 };
 
 /**
- * lightest on gh
+ * lightest on leetcode
  * @param {string} s
  * @param {number} numRows
  * @return {string}
@@ -139,7 +139,7 @@ var convert = function (s, numRows) {
 };
 
 /**
- * fastest on gh
+ * fastest on leetcode
  * @param {string} s
  * @param {number} numRows
  * @return {string}

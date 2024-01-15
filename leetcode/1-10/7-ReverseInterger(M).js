@@ -36,7 +36,7 @@ var reverse = function (x) {
 };
 
 /**
- * fastest on gh
+ * fastest on leetcode
  * @param {number} x
  * @return {number}
 //  */
@@ -57,7 +57,7 @@ var reverse = function (x) {
 // };
 
 /**
- * lighest on gh
+ * lighest on leetcode
  * @param {number} x
  * @return {number}
  */

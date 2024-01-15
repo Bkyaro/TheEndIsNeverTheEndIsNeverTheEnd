@@ -21,7 +21,7 @@
 // Explanation: ".*" means "zero or more (*) of any character (.)".
 
 /**
- * understandable on gh
+ * understandable on leetcode
  * @param {string} s
  * @param {string} p
  * @return {boolean}
@@ -57,7 +57,7 @@ var isMatch = (string, pattern) => {
 };
 
 /**
- * fastest on gh
+ * fastest on leetcode
  * @param {string} s
  * @param {string} p
  * @return {boolean}
@@ -99,7 +99,7 @@ var isMatch = (s, p) => {
 };
 
 /**
- * lightest on gh
+ * lightest on leetcode
  * @param {string} s
  * @param {string} p
  * @return {boolean}

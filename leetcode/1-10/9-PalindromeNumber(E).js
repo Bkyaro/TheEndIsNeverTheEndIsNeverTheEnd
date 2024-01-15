@@ -33,7 +33,7 @@ var isPalindrome = function (x) {
 };
 
 /**
- * fastest on gh
+ * fastest on leetcode
  * @param {number} x
  * @return {boolean}
  */
@@ -50,7 +50,7 @@ var isPalindrome = function (x) {
 };
 
 /**
- * lighest on gh
+ * lighest on leetcode
  * @param {number} x
  * @return {boolean}
  */

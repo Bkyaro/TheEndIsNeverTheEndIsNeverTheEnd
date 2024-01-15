@@ -65,7 +65,7 @@ var intToRoman = function (num) {
 };
 
 /**
- * lightest on gh
+ * lightest on leetcode
  * @param {number} num
  * @return {string}
  */
@@ -100,7 +100,7 @@ var intToRoman = function (num) {
 };
 
 /**
- * lightest on gh
+ * lightest on leetcode
  * @param {number} num
  * @return {string}
  */

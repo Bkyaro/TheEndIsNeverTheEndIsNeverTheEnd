@@ -66,7 +66,7 @@ var romanToInt = function (s) {
 };
 
 /**
- * fastest on gh
+ * fastest on leetcode
  * @param {string} s
  * @return {number}
  */
@@ -94,7 +94,7 @@ var romanToInt = function (s) {
 };
 
 /**
- * lightest on gh
+ * lightest on leetcode
  * @param {string} s
  * @return {number}
  */

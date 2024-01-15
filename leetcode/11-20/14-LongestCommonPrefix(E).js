@@ -32,7 +32,7 @@ var longestCommonPrefix = function (strs) {
 };
 
 /**
- * fastest on gh
+ * fastest on leetcode
  * @param {string[]} strs
  * @return {string}
  */
