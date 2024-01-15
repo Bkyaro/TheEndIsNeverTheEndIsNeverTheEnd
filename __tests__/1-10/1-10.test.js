@@ -1,13 +1,4 @@
-const twoSum = require("../../leetcode/1-10/1-TwoSum(E).js");
-const addTwoNumbers = require("../../leetcode/1-10/2-AddTwoNumbers(M).js");
-const lengthOfLongestSubstring = require("../../leetcode/1-10/3-LongestSubstringWithoutRepeatingCharacters(M).js");
-const findMedianSortedArrays = require("../../leetcode/1-10/4-MedianOfTwoSortedArrays(H).js");
-const longestPalindrome = require("../../leetcode/1-10/5-LongestPalindromicSubstring(M).js");
-const convert = require("../../leetcode/1-10/6-ZigzagConvertion(M).js");
-const reverse = require("../../leetcode/1-10/7-ReverseInterger(M).js");
-const myAtoi = require("../../leetcode/1-10/8-StringToInterger(M).js");
-const isPalindrome = require("../../leetcode/1-10/9-PalindromeNumber(E).js");
-const isMatch = require("../../leetcode/1-10/10-RegularExpressionMatching(H).js");
+const entryMethods = require("../../leetcode/1-10/entry");
 
 describe("1-Two Sums", () => {
   const testy = [
@@ -18,7 +9,7 @@ describe("1-Two Sums", () => {
 
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(twoSum(test.nums, test.target)).toEqual(test.output);
+      expect(entryMethods.twoSum(test.nums, test.target)).toEqual(test.output);
     });
   });
 });
@@ -32,7 +23,7 @@ describe("1-Two Sums", () => {
 
 //   testy.forEach((test, index) => {
 //     it(`test${index}`, () => {
-//       expect(addTwoNumbers(test.l1, test.l2)).toEqual(test.output);
+//       expect(entryMethods.addTwoNumbers(test.l1, test.l2)).toEqual(test.output);
 //     });
 //   });
 // });
@@ -49,7 +40,9 @@ describe("3-Longest Substring Without Repeating Characters", () => {
 
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(lengthOfLongestSubstring(test.s)).toEqual(test.output);
+      expect(entryMethods.lengthOfLongestSubstring(test.s)).toEqual(
+        test.output
+      );
     });
   });
 });
@@ -64,7 +57,9 @@ describe("4-Median of Two Sorted Arrays", () => {
 
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(findMedianSortedArrays(test.s, test.t)).toEqual(test.output);
+      expect(entryMethods.findMedianSortedArrays(test.s, test.t)).toEqual(
+        test.output
+      );
     });
   });
 });
@@ -79,7 +74,7 @@ describe("5-Longest Palindromic Substring", () => {
 
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(longestPalindrome(test.s)).toEqual(test.output);
+      expect(entryMethods.longestPalindrome(test.s)).toEqual(test.output);
     });
   });
 });
@@ -96,7 +91,7 @@ describe("6-ZigZag Conversion", () => {
 
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(convert(test.s, test.numRows)).toEqual(test.output);
+      expect(entryMethods.convert(test.s, test.numRows)).toEqual(test.output);
     });
   });
 });
@@ -111,7 +106,7 @@ describe("7-Reverse Interger", () => {
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(reverse(test.x)).toEqual(test.output);
+      expect(entryMethods.reverse(test.x)).toEqual(test.output);
     });
   });
 });
@@ -127,7 +122,7 @@ describe("8-String to Interger", () => {
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(myAtoi(test.s)).toEqual(test.output);
+      expect(entryMethods.myAtoi(test.s)).toEqual(test.output);
     });
   });
 });
@@ -143,7 +138,7 @@ describe("9-Palindrome Number", () => {
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(isPalindrome(test.x)).toEqual(test.output);
+      expect(entryMethods.isPalindrome(test.x)).toEqual(test.output);
     });
   });
 });
@@ -157,7 +152,7 @@ describe("10-Regular Expression Matching", () => {
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(isMatch(test.s, test.p)).toEqual(test.output);
+      expect(entryMethods.isMatch(test.s, test.p)).toEqual(test.output);
     });
   });
 });

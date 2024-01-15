@@ -1,7 +1,4 @@
-const maxArea = require("../../leetcode/11-20/11-ContainerWithMostWater(M).js");
-const intToRoman = require("../../leetcode/11-20/12-IntegerToRoman(M).js");
-const romanToInt = require("../../leetcode/11-20/13-RomanToInteger(E).js");
-const longestCommonPrefix = require("../../leetcode/11-20/14-LongestCommonPrefix(E).js");
+const entryMethods = require("../../leetcode/11-20/entry.js");
 describe("11-Container with most water", () => {
   const testy = [
     { height: [1, 8, 6, 2, 5, 4, 8, 3, 7], output: 49 },
@@ -12,7 +9,7 @@ describe("11-Container with most water", () => {
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(maxArea(test.height)).toEqual(test.output);
+      expect(entryMethods.maxArea(test.height)).toEqual(test.output);
     });
   });
 });
@@ -28,12 +25,12 @@ describe("12-Integer to roman", () => {
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(intToRoman(test.num)).toEqual(test.output);
+      expect(entryMethods.intToRoman(test.num)).toEqual(test.output);
     });
   });
 });
 
-describe("12-Roman to integer", () => {
+describe("13-Roman to integer", () => {
   const testy = [
     { s: "III", output: 3 },
     { s: "IV", output: 4 },
@@ -44,12 +41,12 @@ describe("12-Roman to integer", () => {
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(romanToInt(test.s)).toEqual(test.output);
+      expect(entryMethods.romanToInt(test.s)).toEqual(test.output);
     });
   });
 });
 
-describe("13-Longest common prefix", () => {
+describe("14-Longest common prefix", () => {
   const testy = [
     { strs: ["flower", "flow", "flight"], output: "fl" },
     { strs: ["flower", "flower", "flower", "flower"], output: "flower" },
@@ -62,7 +59,26 @@ describe("13-Longest common prefix", () => {
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
-      expect(longestCommonPrefix(test.strs)).toEqual(test.output);
+      expect(entryMethods.longestCommonPrefix(test.strs)).toEqual(test.output);
+    });
+  });
+});
+
+describe("15-Three sums", () => {
+  const testy = [
+    {
+      nums: [-1, 0, 1, 2, -1, -4],
+      output: [
+        [-1, -1, 2],
+        [-1, 0, 1],
+      ],
+    },
+    { nums: [0, 0, 0], output: [0, 0, 0] },
+    { nums: [0, 0, 1], output: [] },
+  ];
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(entryMethods.threeSum(test.nums)).toEqual(test.output);
     });
   });
 });
