@@ -82,3 +82,28 @@ describe("15-Three sums", () => {
     });
   });
 });
+
+describe("16-Three sum closest", () => {
+  const testy = [
+    {
+      nums: [-1, 2, 1, -4],
+      target: 1,
+      output: 2,
+    },
+    {
+      nums: [0, 0, 0],
+      target: 1,
+      output: 0,
+    },
+    {
+      nums: [],
+    },
+  ];
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(entryMethods.threeSumClosest(test.nums, test.target)).toEqual(
+        test.output
+      );
+    });
+  });
+});
