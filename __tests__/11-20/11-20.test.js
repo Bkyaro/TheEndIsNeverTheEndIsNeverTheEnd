@@ -73,7 +73,7 @@ describe("15-Three sums", () => {
         [-1, 0, 1],
       ],
     },
-    { nums: [0, 0, 0], output: [0, 0, 0] },
+    { nums: [0, 0, 0], output: [[0, 0, 0]] },
     { nums: [0, 0, 1], output: [] },
   ];
   testy.forEach((test, index) => {
