@@ -25,7 +25,7 @@
  * @param {number} target
  * @return {number}
  */
-function threeSumClosest(nums, target) {
+var threeSumClosest = function (nums, target) {
   const n = nums.length;
   let ans = 0;
   let diff = Number.MAX_SAFE_INTEGER;
@@ -48,6 +48,44 @@ function threeSumClosest(nums, target) {
     }
   }
   return ans;
-}
+};
+
+/**
+ * fastest on leetcode
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var threeSumClosest = function (nums, target) {
+  let number = Infinity;
+  let Val = 0;
+  let flag = 0;
+  let k = 0;
+  for (let i = 0; i < nums.length - 2; i++) {
+    for (let j = i + 1; j < nums.length - 1; j++) {
+      for (let k = j + 1; k < nums.length; k++) {
+        let sum = nums[i] + nums[j] + nums[k];
+        if (sum == target) {
+          flag = 1;
+          Val = sum;
+          break;
+        } else {
+          let diff = Math.abs(sum - target);
+          if (diff < number) {
+            Val = sum;
+            number = diff;
+          }
+        }
+        if (flag == 1) {
+          break;
+        }
+      }
+      if (flag == 1) {
+        break;
+      }
+    }
+  }
+  return Val;
+};
 
 module.exports = threeSumClosest;
