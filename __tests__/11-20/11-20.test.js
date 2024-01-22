@@ -94,10 +94,7 @@ describe("16-Three sum closest", () => {
       nums: [0, 0, 0],
       target: 1,
       output: 0,
-    },
-    {
-      nums: [],
-    },
+    }
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {

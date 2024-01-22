@@ -9,8 +9,8 @@
 // Input: nums = [-1,2,1,-4], target = 1
 // Output: 2
 // Explanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
-// Example 2:
 
+// Example 2:
 // Input: nums = [0,0,0], target = 1
 // Output: 0
 // Explanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).
@@ -25,6 +25,29 @@
  * @param {number} target
  * @return {number}
  */
-var threeSumClosest = function (nums, target) {};
+function threeSumClosest(nums, target) {
+  const n = nums.length;
+  let ans = 0;
+  let diff = Number.MAX_SAFE_INTEGER;
+  nums.sort((a, b) => a - b);
+
+  for (let i = 0; i < n; i++) {
+    let j = i + 1;
+    let k = n - 1;
+
+    while (j < k) {
+      const sum = nums[i] + nums[j] + nums[k];
+      const tmp = Math.abs(target - sum);
+      if (tmp < diff) {
+        ans = sum;
+        diff = tmp;
+      }
+
+      if (sum > target) k--;
+      else j++;
+    }
+  }
+  return ans;
+}
 
 module.exports = threeSumClosest;
