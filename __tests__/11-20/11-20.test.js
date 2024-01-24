@@ -94,13 +94,39 @@ describe("16-Three sum closest", () => {
       nums: [0, 0, 0],
       target: 1,
       output: 0,
-    }
+    },
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(entryMethods.threeSumClosest(test.nums, test.target)).toEqual(
         test.output
       );
+    });
+  });
+});
+
+describe("17-Letter combination of phone number", () => {
+  const testy = [
+    {
+      digits: "23",
+      output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"],
+    },
+    {
+      digits: "234",
+      output: ['adg','adh','adi','aeg','aeh','aei','afg','afh','afi','bdg','bdh','bdi','beg','beh','bei','bfg','bfh','bfi','cdg','cdh','cdi','ceg','ceh','cei','cfg','cfh','cfi'],
+    },
+    {
+      digits: "2",
+      output: ["a", "b", "c"],
+    },
+    {
+      digits: "",
+      output: [],
+    },
+  ];
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(entryMethods.letterCombinations(test.digits)).toEqual(test.output);
     });
   });
 });
