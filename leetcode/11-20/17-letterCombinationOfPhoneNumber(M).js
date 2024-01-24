@@ -44,4 +44,71 @@ var letterCombinations = function (digits) {
   return result;
 };
 
+/**
+ * fastest on leetcode
+ * @param {string} digits
+ * @return {string[]}
+ */
+var letterCombinations = function (digits) {
+  const MAP = {
+    2: "abc",
+    3: "def",
+    4: "ghi",
+    5: "jkl",
+    6: "mno",
+    7: "pqrs",
+    8: "tuv",
+    9: "wxyz",
+  };
+
+  const res = [];
+  const dfs = (index, curStr) => {
+    if (curStr.length === digits.length) {
+      res.push(curStr.join(""));
+      return;
+    }
+
+    for (let i = 0; i < MAP[digits.charAt(index)].length; i++) {
+      // curStr.push(MAP[digits.charAt(index)].charAt(i));
+      dfs(index + 1, [...curStr, MAP[digits.charAt(index)].charAt(i)]);
+      // curStr.pop();
+    }
+  };
+  if (digits.length > 0) {
+    dfs(0, []);
+  }
+
+  return res;
+};
+
+/**
+ * lightest on leetcode
+ * @param {string} digits
+ * @return {string[]}
+ */
+var letterCombinations = function (digits) {
+  if (digits.length === 0) return [];
+
+  const phone_map = ["abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
+  const output = [];
+  backtrack("", digits, phone_map, output);
+  return output;
+
+  function backtrack(combination, next_digits, phone_map, output) {
+    if (next_digits.length === 0) {
+      output.push(combination);
+    } else {
+      const letters = phone_map[next_digits[0] - "2"];
+      for (const letter of letters) {
+        backtrack(
+          combination + letter,
+          next_digits.slice(1),
+          phone_map,
+          output
+        );
+      }
+    }
+  }
+};
+
 module.exports = letterCombinations;
