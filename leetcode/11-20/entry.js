@@ -5,6 +5,7 @@ const longestCommonPrefix = require("../../leetcode/11-20/14-LongestCommonPrefix
 const threeSum = require("../../leetcode/11-20/15-3Sums(M).js");
 const threeSumClosest = require("../../leetcode/11-20/16-3SumsClosest(M).js");
 const letterCombinations = require("../../leetcode/11-20/17-letterCombinationOfPhoneNumber(M).js");
+const isValid = require("../../leetcode/11-20/20-validParentheses(E).js");
 
 module.exports = {
   maxArea,
@@ -13,5 +14,6 @@ module.exports = {
   longestCommonPrefix,
   threeSum,
   threeSumClosest,
-  letterCombinations
+  letterCombinations,
+  isValid,
 };

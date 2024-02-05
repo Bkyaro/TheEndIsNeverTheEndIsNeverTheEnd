@@ -113,7 +113,35 @@ describe("17-Letter combination of phone number", () => {
     },
     {
       digits: "234",
-      output: ['adg','adh','adi','aeg','aeh','aei','afg','afh','afi','bdg','bdh','bdi','beg','beh','bei','bfg','bfh','bfi','cdg','cdh','cdi','ceg','ceh','cei','cfg','cfh','cfi'],
+      output: [
+        "adg",
+        "adh",
+        "adi",
+        "aeg",
+        "aeh",
+        "aei",
+        "afg",
+        "afh",
+        "afi",
+        "bdg",
+        "bdh",
+        "bdi",
+        "beg",
+        "beh",
+        "bei",
+        "bfg",
+        "bfh",
+        "bfi",
+        "cdg",
+        "cdh",
+        "cdi",
+        "ceg",
+        "ceh",
+        "cei",
+        "cfg",
+        "cfh",
+        "cfi",
+      ],
     },
     {
       digits: "2",
@@ -127,6 +155,36 @@ describe("17-Letter combination of phone number", () => {
   testy.forEach((test, index) => {
     it(`test${index}`, () => {
       expect(entryMethods.letterCombinations(test.digits)).toEqual(test.output);
+    });
+  });
+});
+
+describe("20-Valid parentheses", () => {
+  const testy = [
+    {
+      s: "()",
+      output: true,
+    },
+    {
+      s: "()[]{}",
+      output: true,
+    },
+    {
+      s: "(]",
+      output: false,
+    },
+    {
+      s: "([)]",
+      output: false,
+    },
+    {
+      s: "{[]}",
+      output: true,
+    },
+  ];
+  testy.forEach((test, index) => {
+    it(`test${index}`, () => {
+      expect(entryMethods.isValid(test.s)).toEqual(test.output);
     });
   });
 });
