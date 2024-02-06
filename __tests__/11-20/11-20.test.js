@@ -181,6 +181,14 @@ describe("20-Valid parentheses", () => {
       s: "{[]}",
       output: true,
     },
+    {
+      s: "(){}}{",
+      output: false,
+    },
+    {
+      s: "{{",
+      output: false,
+    },
   ];
   testy.forEach((test, index) => {
     it(`test${index}`, () => {

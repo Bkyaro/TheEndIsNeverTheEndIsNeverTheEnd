@@ -24,26 +24,60 @@
  * @return {boolean}
  */
 var isValid = function (s) {
-  let parentheses = 0;
-  let brackets = 0;
-  let braces = 0;
-  for (let i = 0; i < s.length; i++) {
-    let item = s[i];
-    if (item == "(" || item == ")") {
-      parentheses++;
-    }
-    if (item == "[" || item == "]") {
-      brackets++;
-    }
-    if (item == "{" || item == "}") {
-      braces++;
-    }
-  }
-  if (parentheses % 2 != 0 || brackets % 2 != 0 || braces % 2 != 0) {
+  if (s.length <= 1) {
     return false;
-  } else {
-    return true;
   }
+  let stack = [];
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === "(" || s[i] === "{" || s[i] === "[") {
+      stack.push(s[i]);
+    } else {
+      let topChar = stack.pop();
+      if (
+        (s[i] === ")" && topChar !== "(") ||
+        (s[i] === "}" && topChar !== "{") ||
+        (s[i] === "]" && topChar !== "[")
+      ) {
+        return false;
+      }
+    }
+  }
+  return stack.length ? false : true;
+};
+
+/**
+ * fastest & lightest on leetcode
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function (s) {
+  // Create a stack to keep track of opening parentheses
+  const stack = [];
+  // Create a mapping for opening and closing parentheses
+  const parenthesesMap = {
+    "(": ")",
+    "[": "]",
+    "{": "}",
+  };
+  // Iterate through each character in the string
+  for (let i = 0; i < s.length; i++) {
+    const currentChar = s[i];
+    // Check if the current character is an open parenthesis
+    if (parenthesesMap.hasOwnProperty(currentChar)) {
+      // If yes, push it onto the stack
+      stack.push(currentChar);
+    } else {
+      // If no, it's a closing parenthesis
+      // Pop the last element from the stack (if it's empty, assign a dummy value)
+      const lastOpened = stack.pop() || "#";
+      // Check if the closing parenthesis matches the corresponding opening parenthesis
+      if (parenthesesMap[lastOpened] !== currentChar) {
+        return false; // If not, the string is invalid
+      }
+    }
+  }
+  // After iterating through the entire string, the stack should be empty for a valid string
+  return stack.length === 0;
 };
 
 module.exports = isValid;
